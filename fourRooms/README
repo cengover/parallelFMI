@@ -1,0 +1,21 @@
+This folder incorporates Four Room model FMUs, scripts, and solver code. 
+
+build_xml2cpp.sh
+
+Extracts FMUs, parses the XML files, and creates class definitions as header files for the FMU objects (system that FMU represents). Header files include all getters and setters that refer to function calls of the FMU.
+
+xml2cpp.py
+
+It parses the XML file and creates aforementioned FMU header files.
+
+fmi.h
+
+It includes FMI wrapper and creates all function calls from the binary (.so file) that enables interaction with FMUs. 
+
+main.cpp
+
+It includes routines and the hybrid solver loops to wrap, initialize, couple, and solve FMUs over time. 
+
+build.sh
+
+It compiles the code and runs the executable. By altering for loops, we test runtime performance for various scenarios. 

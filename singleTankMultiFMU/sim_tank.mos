@@ -1,0 +1,4 @@
+loadModel(Modelica, {"3.2.1"});
+loadFile("Tank.mo");
+translateModelFMU(Tank,"2.0");
+//simulate(Tank, stopTime=10.0,outputFormat="csv",fixedStepSize=0.1);

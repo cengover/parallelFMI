@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  fmiVersion="2.0"
+  modelName="SerialTanks"
+  guid="{8c4e810f-3df3-4a00-8276-176fa3c9f9e0}"
+  description=""
+  generationTool="OpenModelica Compiler v1.9.4-dev.733+gf701c46"
+  generationDateAndTime="2016-01-13T14:56:55Z"
+  variableNamingConvention="structured"
+  numberOfEventIndicators="0">
+  <ModelExchange
+    modelIdentifier="SerialTanks">
+  </ModelExchange>
+  <LogCategories>
+    <Category name="logEvents" />
+    <Category name="logSingularLinearSystems" />
+    <Category name="logNonlinearSystems" />
+    <Category name="logDynamicStateSelection" />
+    <Category name="logStatusWarning" />
+    <Category name="logStatusDiscard" />
+    <Category name="logStatusError" />
+    <Category name="logStatusFatal" />
+    <Category name="logStatusPending" />
+    <Category name="logAll" />
+    <Category name="logFmi2Call" />
+  </LogCategories>
+  <DefaultExperiment startTime="0.0" stopTime="1.0" tolerance="1e-06"/>
+  <ModelVariables>
+  <!-- Index of variable = "1" -->
+  <ScalarVariable
+    name="TT.Tanks[1].x"
+    valueReference="0"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "2" -->
+  <ScalarVariable
+    name="TT.Tanks[2].x"
+    valueReference="1"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "3" -->
+  <ScalarVariable
+    name="TT.Tanks[3].x"
+    valueReference="2"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "4" -->
+  <ScalarVariable
+    name="TT.Tanks[4].x"
+    valueReference="3"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "5" -->
+  <ScalarVariable
+    name="TT.Tanks[5].x"
+    valueReference="4"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "6" -->
+  <ScalarVariable
+    name="TT.Tanks[6].x"
+    valueReference="5"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "7" -->
+  <ScalarVariable
+    name="TT.Tanks[7].x"
+    valueReference="6"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "8" -->
+  <ScalarVariable
+    name="TT.Tanks[8].x"
+    valueReference="7"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "9" -->
+  <ScalarVariable
+    name="TT.Tanks[9].x"
+    valueReference="8"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "10" -->
+  <ScalarVariable
+    name="TT.Tanks[10].x"
+    valueReference="9"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="10.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "11" -->
+  <ScalarVariable
+    name="der(TT.Tanks[1].x)"
+    valueReference="10"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "12" -->
+  <ScalarVariable
+    name="der(TT.Tanks[2].x)"
+    valueReference="11"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "13" -->
+  <ScalarVariable
+    name="der(TT.Tanks[3].x)"
+    valueReference="12"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="3"/>
+  </ScalarVariable>
+  <!-- Index of variable = "14" -->
+  <ScalarVariable
+    name="der(TT.Tanks[4].x)"
+    valueReference="13"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="4"/>
+  </ScalarVariable>
+  <!-- Index of variable = "15" -->
+  <ScalarVariable
+    name="der(TT.Tanks[5].x)"
+    valueReference="14"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="5"/>
+  </ScalarVariable>
+  <!-- Index of variable = "16" -->
+  <ScalarVariable
+    name="der(TT.Tanks[6].x)"
+    valueReference="15"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="6"/>
+  </ScalarVariable>
+  <!-- Index of variable = "17" -->
+  <ScalarVariable
+    name="der(TT.Tanks[7].x)"
+    valueReference="16"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="7"/>
+  </ScalarVariable>
+  <!-- Index of variable = "18" -->
+  <ScalarVariable
+    name="der(TT.Tanks[8].x)"
+    valueReference="17"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="8"/>
+  </ScalarVariable>
+  <!-- Index of variable = "19" -->
+  <ScalarVariable
+    name="der(TT.Tanks[9].x)"
+    valueReference="18"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="9"/>
+  </ScalarVariable>
+  <!-- Index of variable = "20" -->
+  <ScalarVariable
+    name="der(TT.Tanks[10].x)"
+    valueReference="19"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real derivative="10"/>
+  </ScalarVariable>
+  <!-- Index of variable = "21" -->
+  <ScalarVariable
+    name="TT.Tanks[1].u"
+    valueReference="20"
+    variability="continuous"
+    causality="local"
+    initial="calculated">
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "22" -->
+  <ScalarVariable
+    name="TT.Tanks[2].u"
+    valueReference="21"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "23" -->
+  <ScalarVariable
+    name="TT.Tanks[3].u"
+    valueReference="22"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "24" -->
+  <ScalarVariable
+    name="TT.Tanks[4].u"
+    valueReference="23"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "25" -->
+  <ScalarVariable
+    name="TT.Tanks[5].u"
+    valueReference="24"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "26" -->
+  <ScalarVariable
+    name="TT.Tanks[6].u"
+    valueReference="25"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "27" -->
+  <ScalarVariable
+    name="TT.Tanks[7].u"
+    valueReference="26"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "28" -->
+  <ScalarVariable
+    name="TT.Tanks[8].u"
+    valueReference="27"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "29" -->
+  <ScalarVariable
+    name="TT.Tanks[9].u"
+    valueReference="28"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "30" -->
+  <ScalarVariable
+    name="TT.Tanks[10].u"
+    valueReference="29"
+    variability="continuous"
+    causality="local"
+    initial="exact">
+    <Real start="2.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "31" -->
+  <ScalarVariable
+    name="TT.Tanks[1].a"
+    valueReference="30"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "32" -->
+  <ScalarVariable
+    name="TT.Tanks[2].a"
+    valueReference="31"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "33" -->
+  <ScalarVariable
+    name="TT.Tanks[3].a"
+    valueReference="32"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "34" -->
+  <ScalarVariable
+    name="TT.Tanks[4].a"
+    valueReference="33"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "35" -->
+  <ScalarVariable
+    name="TT.Tanks[5].a"
+    valueReference="34"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "36" -->
+  <ScalarVariable
+    name="TT.Tanks[6].a"
+    valueReference="35"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "37" -->
+  <ScalarVariable
+    name="TT.Tanks[7].a"
+    valueReference="36"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "38" -->
+  <ScalarVariable
+    name="TT.Tanks[8].a"
+    valueReference="37"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "39" -->
+  <ScalarVariable
+    name="TT.Tanks[9].a"
+    valueReference="38"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "40" -->
+  <ScalarVariable
+    name="TT.Tanks[10].a"
+    valueReference="39"
+    variability="fixed"
+    causality="parameter"
+    initial="exact">
+    <Real start="0.2"/>
+  </ScalarVariable>
+  <!-- Index of variable = "41" -->
+  <ScalarVariable
+    name="TT.n"
+    valueReference="0"
+    variability="fixed"
+    causality="calculatedParameter"
+    initial="calculated">
+    <Integer/>
+  </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+    </Outputs>
+    <Derivatives>
+      <Unknown index="11" dependencies="1" dependenciesKind="dependent" />
+      <Unknown index="12" dependencies="1 2" dependenciesKind="dependent dependent" />
+      <Unknown index="13" dependencies="2 3" dependenciesKind="dependent dependent" />
+      <Unknown index="14" dependencies="3 4" dependenciesKind="dependent dependent" />
+      <Unknown index="15" dependencies="4 5" dependenciesKind="dependent dependent" />
+      <Unknown index="16" dependencies="5 6" dependenciesKind="dependent dependent" />
+      <Unknown index="17" dependencies="6 7" dependenciesKind="dependent dependent" />
+      <Unknown index="18" dependencies="7 8" dependenciesKind="dependent dependent" />
+      <Unknown index="19" dependencies="8 9" dependenciesKind="dependent dependent" />
+      <Unknown index="20" dependencies="9 10" dependenciesKind="dependent dependent" />
+    </Derivatives>
+    <InitialUnknowns>
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>

@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  fmiVersion="2.0"
+  modelName="ParallelComponents.Components.Zone"
+  guid="{f68b854b-7124-4b2c-b3fe-e075808655fe}"
+  generationTool="Dymola Version 2016 (64-bit), 2015-04-15"
+  generationDateAndTime="2016-04-29T14:53:03Z"
+  variableNamingConvention="structured"
+  numberOfEventIndicators="14">
+  <ModelExchange
+    modelIdentifier="ParallelComponents_Components_Zone"
+    canGetAndSetFMUstate="true"
+    providesDirectionalDerivative="true"/>
+  <CoSimulation
+    modelIdentifier="ParallelComponents_Components_Zone"
+    canHandleVariableCommunicationStepSize="true"
+    canInterpolateInputs="true"
+    maxOutputDerivativeOrder="1"
+    canGetAndSetFMUstate="true"
+    providesDirectionalDerivative="true"/>
+  <UnitDefinitions>
+    <Unit
+      name="1"/>
+    <Unit
+      name="1/K">
+      <BaseUnit K="-1"/>
+    </Unit>
+    <Unit
+      name="J">
+      <BaseUnit kg="1"
+        m="2"
+        s="-2"/>
+    </Unit>
+    <Unit
+      name="J/kg">
+      <BaseUnit m="2"
+        s="-2"/>
+    </Unit>
+    <Unit
+      name="K">
+      <BaseUnit K="1"/>
+      <DisplayUnit
+        name="K"/>
+      <DisplayUnit
+        name="degC"
+        offset="-273.15"/>
+    </Unit>
+    <Unit
+      name="Pa">
+      <BaseUnit kg="1"
+        m="-1"
+        s="-2"/>
+      <DisplayUnit
+        name="bar"
+        factor="1E-05"/>
+    </Unit>
+    <Unit
+      name="W">
+      <BaseUnit kg="1"
+        m="2"
+        s="-3"/>
+    </Unit>
+    <Unit
+      name="W/K">
+      <BaseUnit kg="1"
+        m="2"
+        s="-3"
+        K="-1"/>
+    </Unit>
+    <Unit
+      name="kg">
+      <BaseUnit kg="1"/>
+    </Unit>
+    <Unit
+      name="kg/kg"/>
+    <Unit
+      name="kg/s">
+      <BaseUnit kg="1"
+        s="-1"/>
+    </Unit>
+    <Unit
+      name="m3">
+      <BaseUnit m="3"/>
+    </Unit>
+  </UnitDefinitions>
+  <TypeDefinitions>
+    <SimpleType
+      name="Buildings.Fluid.FMI.Interfaces.MassFractionConnector">
+      <Real
+        quantity="MassFraction"
+        unit="1"
+        min="0.0"
+        max="1.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Buildings.Fluid.FMI.Interfaces.PressureOutput">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        min="0.0"
+        nominal="100000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealInput">
+      <Real/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Blocks.Interfaces.RealOutput">
+      <Real/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.PartialMedium.MassFlowRate">
+      <Real
+        quantity="MassFlowRate.unusablePartialMedium"
+        unit="kg/s"
+        min="-100000.0"
+        max="100000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.AbsolutePressure">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"
+        min="0.0"
+        max="100000000.0"
+        nominal="100000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.Density">
+      <Real
+        quantity="Density"
+        unit="kg/m3"
+        min="0.0"
+        max="100000.0"
+        nominal="1.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.EnthalpyFlowRate">
+      <Real
+        quantity="EnthalpyFlowRate"
+        unit="W"
+        min="-100000000.0"
+        max="100000000.0"
+        nominal="1000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.ExtraProperty">
+      <Real min="0.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.ExtraPropertyFlowRate">
+      <Real
+        unit="kg/s"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.MassFraction">
+      <Real
+        quantity="MassFraction"
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.MolarMass">
+      <Real
+        quantity="MolarMass"
+        unit="kg/mol"
+        min="0.001"
+        max="0.25"
+        nominal="0.032"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.SpecificEnthalpy">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-10000000000.0"
+        max="10000000000.0"
+        nominal="1000000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.SpecificHeatCapacity">
+      <Real
+        quantity="SpecificHeatCapacity"
+        unit="J/(kg.K)"
+        min="0.0"
+        max="10000000.0"
+        nominal="1000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.SpecificInternalEnergy">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"
+        min="-100000000.0"
+        max="100000000.0"
+        nominal="1000000.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Media.Interfaces.Types.Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Conversions.NonSIunits.Pressure_bar">
+      <Real
+        quantity="Pressure"
+        unit="bar"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Conversions.NonSIunits.Temperature_degC">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="degC"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Density">
+      <Real
+        quantity="Density"
+        unit="kg/m3"
+        min="0.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Energy">
+      <Real
+        quantity="Energy"
+        unit="J"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.EnthalpyFlowRate">
+      <Real
+        quantity="EnthalpyFlowRate"
+        unit="W"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.HeatCapacity">
+      <Real
+        quantity="HeatCapacity"
+        unit="J/K"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.HeatFlowRate">
+      <Real
+        quantity="Power"
+        unit="W"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.LinearTemperatureCoefficient">
+      <Real
+        quantity="LinearTemperatureCoefficient"
+        unit="1/K"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Mass">
+      <Real
+        quantity="Mass"
+        unit="kg"
+        min="0.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.MassFlowRate">
+      <Real
+        quantity="MassFlowRate"
+        unit="kg/s"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.MassFraction">
+      <Real
+        quantity="MassFraction"
+        unit="1"
+        min="0.0"
+        max="1.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.MolarMass">
+      <Real
+        quantity="MolarMass"
+        unit="kg/mol"
+        min="0.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Pressure">
+      <Real
+        quantity="Pressure"
+        unit="Pa"
+        displayUnit="bar"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.SpecificEnthalpy">
+      <Real
+        quantity="SpecificEnergy"
+        unit="J/kg"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.SpecificHeatCapacity">
+      <Real
+        quantity="SpecificHeatCapacity"
+        unit="J/(kg.K)"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Temperature">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        displayUnit="degC"
+        min="0.0"
+        nominal="300.0"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.TemperatureDifference">
+      <Real
+        quantity="ThermodynamicTemperature"
+        unit="K"
+        relativeQuantity="true"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.ThermalConductance">
+      <Real
+        quantity="ThermalConductance"
+        unit="W/K"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.SIunits.Volume">
+      <Real
+        quantity="Volume"
+        unit="m3"/>
+    </SimpleType>
+    <SimpleType
+      name="Modelica.Fluid.Types.Dynamics">
+      <Enumeration>
+        <Item name="DynamicFreeInitial"
+          value="1"
+          description="DynamicFreeInitial -- Dynamic balance, Initial guess value"/>
+        <Item name="FixedInitial"
+          value="2"
+          description="FixedInitial -- Dynamic balance, Initial value fixed"/>
+        <Item name="SteadyStateInitial"
+          value="3"
+          description="SteadyStateInitial -- Dynamic balance, Steady state initial with guess value"/>
+        <Item name="SteadyState"
+          value="4"
+          description="SteadyState -- Steady state balance, Initial guess value"/>
+      </Enumeration>
+    </SimpleType>
+  </TypeDefinitions>
+  <DefaultExperiment startTime="0.0"
+    stopTime="10000.0"
+    tolerance="0.1"/>
+  <VendorAnnotations>
+    <Tool
+      name="FMI_2.0_Schematics">
+      <ModelHierarchy>
+        <Graphics>
+          <GraphicsGroup
+            format="Modelica"
+            coordinateSystem="{{-100,-100},{100,100}}"
+            icon="{Ellipse(extent={{-100,-100},{100,100}}, lineColor={75,138,73}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineThickness=-0.25, endAngle=360), Polygon(points={{-36,60},{64,0},{-36,-60},{-36,60}}, lineColor={0,0,255}, fillColor={75,138,73}, fillPattern=FillPattern.Solid, lineThickness=-0.25), Text(extent={{-64,26},{64,94}}, color={28,108,200}, textString=&quot;ZONE&quot;)}"/>
+        </Graphics>
+        <Component
+          name="vol"
+          class="Buildings.Fluid.MixingVolumes.MixingVolume">
+          <Component
+            name="ports[1]"
+            class="Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b"/>
+          <Component
+            name="ports[2]"
+            class="Modelica.Fluid.Vessels.BaseClasses.VesselFluidPorts_b"/>
+          <Component
+            name="heatPort"
+            class="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a"/>
+          <Component
+            name="dynBal"
+            class="Buildings.Fluid.Interfaces.ConservationEquation"/>
+        </Component>
+        <Component
+          name="theCon"
+          class="Modelica.Thermal.HeatTransfer.Components.ThermalConductor">
+          <Component
+            name="port_a"
+            class="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a"/>
+          <Component
+            name="port_b"
+            class="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b"/>
+        </Component>
+        <Component
+          name="preHea"
+          class="Modelica.Thermal.HeatTransfer.Sources.FixedHeatFlow">
+          <Component
+            name="port"
+            class="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b"/>
+        </Component>
+        <Component
+          name="senTemRoo"
+          class="Modelica.Thermal.HeatTransfer.Sensors.TemperatureSensor">
+          <Component
+            name="port"
+            class="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a"/>
+        </Component>
+        <Component
+          name="outlet1"
+          class="Buildings.Fluid.FMI.Interfaces.Outlet">
+          <Component
+            name="forward"
+            class="Buildings.Fluid.FMI.Interfaces.FluidProperties"/>
+        </Component>
+        <Component
+          name="inlet1"
+          class="Buildings.Fluid.FMI.Interfaces.Inlet">
+          <Component
+            name="forward"
+            class="Buildings.Fluid.FMI.Interfaces.FluidProperties"/>
+        </Component>
+        <Component
+          name="fixedTemperature"
+          class="Buildings.HeatTransfer.Sources.FixedTemperature">
+          <Component
+            name="port"
+            class="Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b"/>
+        </Component>
+        <Port
+          name="inlet1">
+          <Graphics
+            placement="Placement(transformation(extent={{-120,-92},{-100,-72}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{-100,-100},{100,0},{-100,100}}, lineColor={0,0,255}, fillColor={0,0,255}, fillPattern=FillPattern.Backward, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+        <Port
+          name="outlet1">
+          <Graphics
+            placement="Placement(transformation(extent={{100,-90},{120,-70}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{-100,-100},{100,0},{-100,100}}, lineColor={0,0,255}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+        <Port
+          name="y">
+          <Graphics
+            placement="Placement(transformation(extent={{100,84},{120,104}}))">
+            <GraphicsGroup
+              format="Modelica"
+              coordinateSystem="{{-100,-100},{100,100}}"
+              icon="{Polygon(points={{-100,100},{100,0},{-100,-100},{-100,100}}, lineColor={0,0,127}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, lineThickness=-0.25)}"/>
+          </Graphics>
+        </Port>
+      </ModelHierarchy>
+    </Tool>
+  </VendorAnnotations>
+  <ModelVariables>
+    <!-- Index for next variable = 1 -->
+    <ScalarVariable
+      name="V"
+      valueReference="100663296"
+      description="Room volume"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.Volume"
+        start="150"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 2 -->
+    <ScalarVariable
+      name="QRooInt_flow"
+      valueReference="16777216"
+      description="Internal heat gains of the room"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"
+        start="1000"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 3 -->
+    <ScalarVariable
+      name="QRooC_flow_nominal"
+      valueReference="100663297"
+      description="Nominal cooling load of the room"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 4 -->
+    <ScalarVariable
+      name="mA_flow_nominal"
+      valueReference="100663298"
+      description="Nominal air mass flow rate, increased by factor 1.3 to allow for recovery after temperature setback"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.MassFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 5 -->
+    <ScalarVariable
+      name="dTFan"
+      valueReference="16777217"
+      description="Estimated temperature raise across fan that needs to be made up by the cooling coil"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.SIunits.TemperatureDifference"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 6 -->
+    <ScalarVariable
+      name="QCoiC_flow_nominal"
+      valueReference="100663299"
+      description="Cooling load of coil, taking into account economizer, and increased due to latent heat removal"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 7 -->
+    <ScalarVariable
+      name="TASup_nominal"
+      valueReference="16777218"
+      description="Nominal air temperature supplied to room"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"
+        start="291.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 8 -->
+    <ScalarVariable
+      name="TRooSet"
+      valueReference="16777219"
+      description="Nominal room air temperature"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"
+        start="297.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 9 -->
+    <ScalarVariable
+      name="TOut_nominal"
+      valueReference="16777220"
+      description="Design outlet air temperature"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"
+        start="303.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 10 -->
+    <ScalarVariable
+      name="THeaRecLvg"
+      valueReference="100663300"
+      description="Air temperature leaving the heat recovery"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 11 -->
+    <ScalarVariable
+      name="eps"
+      valueReference="16777221"
+      description="Heat recovery effectiveness"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        unit="1"
+        start="0.8"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 12 -->
+    <ScalarVariable
+      name="vol.energyDynamics"
+      valueReference="100663301"
+      description="Type of energy balance: dynamic (3 initialization options) or steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 13 -->
+    <ScalarVariable
+      name="vol.massDynamics"
+      valueReference="100663302"
+      description="Type of mass balance: dynamic (3 initialization options) or steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 14 -->
+    <ScalarVariable
+      name="vol.substanceDynamics"
+      valueReference="100663303"
+      description="Type of independent mass fraction balance: dynamic (3 initialization options) or steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 15 -->
+    <ScalarVariable
+      name="vol.traceDynamics"
+      valueReference="100663304"
+      description="Type of trace substance balance: dynamic (3 initialization options) or steady state"
+      variability="constant">
+      <Enumeration
+        declaredType="Modelica.Fluid.Types.Dynamics"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 16 -->
+    <ScalarVariable
+      name="vol.p_start"
+      valueReference="100663305"
+      description="Start value of pressure"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.AbsolutePressure"
+        start="101325"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 17 -->
+    <ScalarVariable
+      name="vol.T_start"
+      valueReference="16777222"
+      description="Start value of temperature"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.Temperature"
+        displayUnit="K"
+        start="306.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 18 -->
+    <ScalarVariable
+      name="vol.X_start[1]"
+      valueReference="16777223"
+      description="Start value of mass fractions m_i/m"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.01"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 19 -->
+    <ScalarVariable
+      name="vol.X_start[2]"
+      valueReference="16777224"
+      description="Start value of mass fractions m_i/m"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"
+        start="0.99"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 20 -->
+    <ScalarVariable
+      name="vol.mSenFac"
+      valueReference="100663306"
+      description="Factor for scaling the sensible thermal mass of the volume"
+      variability="constant">
+      <Real
+        unit="1"
+        min="1.0"
+        start="3"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 21 -->
+    <ScalarVariable
+      name="vol.prescribedHeatFlowRate"
+      valueReference="100663308"
+      description="Set to true if the model has a prescribed heat flow at its heatPort. If the heat flow rate at the heatPort is only based on temperature difference, then set to false"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 22 -->
+    <ScalarVariable
+      name="vol.simplify_mWat_flow"
+      valueReference="100663309"
+      description="Set to true to cause port_a.m_flow + port_b.m_flow = 0 even if mWat_flow is non-zero"
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 23 -->
+    <ScalarVariable
+      name="vol.use_C_flow"
+      valueReference="100663310"
+      description="Set to true to enable input connector for trace substance"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 24 -->
+    <ScalarVariable
+      name="vol.m_flow_nominal"
+      valueReference="100663311"
+      description="Nominal mass flow rate"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.MassFlowRate"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 25 -->
+    <ScalarVariable
+      name="vol.nPorts"
+      valueReference="100663312"
+      description="Number of ports"
+      variability="constant">
+      <Integer start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 26 -->
+    <ScalarVariable
+      name="vol.m_flow_small"
+      valueReference="100663313"
+      description="Small mass flow rate for regularization of zero flow"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.MassFlowRate"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 27 -->
+    <ScalarVariable
+      name="vol.allowFlowReversal"
+      valueReference="100663314"
+      description="= true to allow flow reversal in medium, false restricts to design direction (ports[1] -&gt; ports[2]). Used only if model has two ports."
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 28 -->
+    <ScalarVariable
+      name="vol.V"
+      valueReference="100663315"
+      description="Volume"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.Volume"
+        start="150.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 29 -->
+    <ScalarVariable
+      name="vol.ports[1].m_flow"
+      valueReference="352321536"
+      description="Mass flow rate from the connection point into the component">
+      <Real
+        declaredType="Modelica.Media.Interfaces.PartialMedium.MassFlowRate"
+        quantity="MassFlowRate.Air"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 30 -->
+    <ScalarVariable
+      name="vol.ports[1].p"
+      valueReference="100663316"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.AbsolutePressure"
+        start="101325"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 31 -->
+    <ScalarVariable
+      name="vol.ports[1].h_outflow"
+      valueReference="369098773"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.SpecificEnthalpy"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 32 -->
+    <ScalarVariable
+      name="vol.ports[1].Xi_outflow[1]"
+      valueReference="335544323"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 33 -->
+    <ScalarVariable
+      name="vol.ports[2].p"
+      valueReference="100663318"
+      description="Thermodynamic pressure in the connection point"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.AbsolutePressure"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 34 -->
+    <ScalarVariable
+      name="vol.ports[2].h_outflow"
+      valueReference="369098773"
+      description="Specific thermodynamic enthalpy close to the connection point if m_flow &lt; 0">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.SpecificEnthalpy"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 35 -->
+    <ScalarVariable
+      name="vol.ports[2].Xi_outflow[1]"
+      valueReference="335544323"
+      description="Independent mixture mass fractions m_i/m close to the connection point if m_flow &lt; 0">
+      <Real
+        unit="kg/kg"
+        min="0.0"
+        max="1.0"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 36 -->
+    <ScalarVariable
+      name="vol.heatPort.T"
+      valueReference="335544320"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 37 -->
+    <ScalarVariable
+      name="vol.heatPort.Q_flow"
+      valueReference="637534231"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 38 -->
+    <ScalarVariable
+      name="vol.T"
+      valueReference="335544320"
+      description="Temperature of the fluid">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 39 -->
+    <ScalarVariable
+      name="vol.U"
+      valueReference="33554432"
+      description="Internal energy of the component">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="J"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 40 -->
+    <ScalarVariable
+      name="vol.p"
+      valueReference="100663320"
+      description="Pressure of the fluid"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.Pressure"
+        start="101325.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 41 -->
+    <ScalarVariable
+      name="vol.m"
+      valueReference="100663321"
+      description="Mass of the component"
+      variability="constant">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="kg"
+        start="180.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 42 -->
+    <ScalarVariable
+      name="vol.Xi[1]"
+      valueReference="335544323"
+      description="Species concentration of the fluid">
+      <Real
+        unit="1"
+        min="0.0"
+        max="1.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 43 -->
+    <ScalarVariable
+      name="vol.mXi[1]"
+      valueReference="33554433"
+      description="Species mass of the component">
+      <Real
+        unit="kg"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 44 -->
+    <ScalarVariable
+      name="vol.dynBal.U"
+      valueReference="33554432"
+      description="Internal energy of fluid">
+      <Real
+        declaredType="Modelica.SIunits.Energy"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 45 -->
+    <ScalarVariable
+      name="der(vol.dynBal.U)"
+      valueReference="587202560"
+      description="der(Internal energy of fluid)">
+      <Real
+        unit="W"
+        derivative="44"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 46 -->
+    <ScalarVariable
+      name="vol.dynBal.mXi[1]"
+      valueReference="33554433"
+      description="Masses of independent components in the fluid">
+      <Real
+        unit="kg"
+        min="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 47 -->
+    <ScalarVariable
+      name="der(vol.dynBal.mXi[1])"
+      valueReference="587202561"
+      description="der(Masses of independent components in the fluid)">
+      <Real
+        unit="kg/s"
+        derivative="46"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 48 -->
+    <ScalarVariable
+      name="theCon.Q_flow"
+      valueReference="637534299"
+      description="Heat flow rate from port_a -&gt; port_b">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 49 -->
+    <ScalarVariable
+      name="theCon.dT"
+      valueReference="637534300"
+      description="port_a.T - port_b.T">
+      <Real
+        declaredType="Modelica.SIunits.TemperatureDifference"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 50 -->
+    <ScalarVariable
+      name="theCon.port_a.T"
+      valueReference="16777228"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 51 -->
+    <ScalarVariable
+      name="theCon.port_a.Q_flow"
+      valueReference="637534299"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 52 -->
+    <ScalarVariable
+      name="theCon.port_b.T"
+      valueReference="335544320"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 53 -->
+    <ScalarVariable
+      name="theCon.port_b.Q_flow"
+      valueReference="637534329"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 54 -->
+    <ScalarVariable
+      name="theCon.G"
+      valueReference="16777225"
+      description="Constant thermal conductance of material"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.ThermalConductance"
+        start="333.3333333333333"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 55 -->
+    <ScalarVariable
+      name="preHea.Q_flow"
+      valueReference="100663389"
+      description="Fixed heat flow rate at port"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 56 -->
+    <ScalarVariable
+      name="preHea.T_ref"
+      valueReference="16777226"
+      description="Reference temperature"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"
+        start="293.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 57 -->
+    <ScalarVariable
+      name="preHea.alpha"
+      valueReference="16777227"
+      description="Temperature coefficient of heat flow rate"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.LinearTemperatureCoefficient"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 58 -->
+    <ScalarVariable
+      name="preHea.port.T"
+      valueReference="335544320"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 59 -->
+    <ScalarVariable
+      name="preHea.port.Q_flow"
+      valueReference="637534302"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 60 -->
+    <ScalarVariable
+      name="senTemRoo.T"
+      valueReference="335544320"
+      description="Absolute temperature as output signal">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="K"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 61 -->
+    <ScalarVariable
+      name="senTemRoo.port.T"
+      valueReference="335544320"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 62 -->
+    <ScalarVariable
+      name="senTemRoo.port.Q_flow"
+      valueReference="100663391"
+      description="Heat flow rate (positive if flowing from outside into the component)"
+      variability="constant">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 63 -->
+    <ScalarVariable
+      name="y"
+      valueReference="335544320"
+      causality="output">
+      <Real
+        declaredType="Modelica.Blocks.Interfaces.RealOutput"
+        unit="K"
+        min="1.0"
+        max="10000.0"
+        nominal="300.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 64 -->
+    <ScalarVariable
+      name="outlet1.use_p_in"
+      valueReference="100663403"
+      description="= true to use pressure connector, false to remove it"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 65 -->
+    <ScalarVariable
+      name="outlet1.allowFlowReversal"
+      valueReference="100663404"
+      description="= true to allow flow reversal, false restricts to design direction (inlet -&gt; outlet)"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 66 -->
+    <ScalarVariable
+      name="outlet1.m_flow"
+      valueReference="335544321"
+      description="Mass flow rate from the connection point into the component"
+      causality="output">
+      <Real
+        declaredType="Modelica.Media.Interfaces.PartialMedium.MassFlowRate"
+        quantity="MassFlowRate.Air"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 67 -->
+    <ScalarVariable
+      name="outlet1.forward.T"
+      valueReference="335544322"
+      description="Temperature"
+      causality="output">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 68 -->
+    <ScalarVariable
+      name="outlet1.forward.X_w"
+      valueReference="335544323"
+      description="Water vapor mass fractions per kg total air"
+      causality="output">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"
+        nominal="0.1"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 69 -->
+    <ScalarVariable
+      name="inlet1.use_p_in"
+      valueReference="100663415"
+      description="= true to use a pressure from connector, false to output Medium.p_default"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 70 -->
+    <ScalarVariable
+      name="inlet1.allowFlowReversal"
+      valueReference="100663416"
+      description="= true to allow flow reversal, false restricts to design direction (inlet -&gt; outlet)"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 71 -->
+    <ScalarVariable
+      name="inlet1.m_flow"
+      valueReference="352321536"
+      description="Mass flow rate from the connection point into the component"
+      causality="input">
+      <Real
+        declaredType="Modelica.Media.Interfaces.PartialMedium.MassFlowRate"
+        quantity="MassFlowRate.Air"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 72 -->
+    <ScalarVariable
+      name="inlet1.forward.T"
+      valueReference="352321537"
+      description="Temperature"
+      causality="input">
+      <Real
+        declaredType="Modelica.Media.Interfaces.Types.Temperature"
+        start="293.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 73 -->
+    <ScalarVariable
+      name="inlet1.forward.X_w"
+      valueReference="352321538"
+      description="Water vapor mass fractions per kg total air"
+      causality="input">
+      <Real
+        declaredType="Buildings.Fluid.FMI.Interfaces.MassFractionConnector"
+        nominal="0.1"
+        start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 74 -->
+    <ScalarVariable
+      name="fixedTemperature.T"
+      valueReference="16777228"
+      description="Fixed temperature at port"
+      causality="parameter"
+      variability="tunable">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"
+        displayUnit="K"
+        start="303.15"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 75 -->
+    <ScalarVariable
+      name="fixedTemperature.port.T"
+      valueReference="16777228"
+      description="Port temperature">
+      <Real
+        declaredType="Modelica.SIunits.Temperature"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 76 -->
+    <ScalarVariable
+      name="fixedTemperature.port.Q_flow"
+      valueReference="637534329"
+      description="Heat flow rate (positive if flowing from outside into the component)">
+      <Real
+        declaredType="Modelica.SIunits.HeatFlowRate"/>
+    </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="63"
+        dependencies="44 46"
+        dependenciesKind="dependent fixed"/>
+      <Unknown index="66"
+        dependencies="71"
+        dependenciesKind="fixed"/>
+      <Unknown index="67"
+        dependencies="44 46"
+        dependenciesKind="dependent fixed"/>
+      <Unknown index="68"
+        dependencies="46"
+        dependenciesKind="fixed"/>
+    </Outputs>
+    <Derivatives>
+      <Unknown index="45"
+        dependencies="44 46 71 72 73"
+        dependenciesKind="dependent fixed dependent dependent dependent"/>
+      <Unknown index="47"
+        dependencies="44 46 71 73"
+        dependenciesKind="dependent fixed dependent dependent"/>
+    </Derivatives>
+    <InitialUnknowns>
+      <Unknown index="44"
+        dependencies="17 18"
+        dependenciesKind="dependent dependent"/>
+      <Unknown index="45"
+        dependencies="2 17 18 54 56 57 71 72 73 74"
+        dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent"/>
+      <Unknown index="46"
+        dependencies="18"
+        dependenciesKind="dependent"/>
+      <Unknown index="47"
+        dependencies="2 18 71 73"
+        dependenciesKind="dependent dependent dependent dependent"/>
+      <Unknown index="63"
+        dependencies="17 18"
+        dependenciesKind="dependent dependent"/>
+      <Unknown index="66"
+        dependencies="71"
+        dependenciesKind="dependent"/>
+      <Unknown index="67"
+        dependencies="17 18"
+        dependenciesKind="dependent dependent"/>
+      <Unknown index="68"
+        dependencies="18"
+        dependenciesKind="dependent"/>
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>

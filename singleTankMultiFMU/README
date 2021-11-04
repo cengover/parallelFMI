@@ -1,0 +1,5 @@
+This folder incorporates test case that connects 1-tank models in serial. 
+
+build.sh
+
+It compiles the code and runs the executable. By altering arguments (entered after "./build.sh"), we test runtime performance for various scenarios. 

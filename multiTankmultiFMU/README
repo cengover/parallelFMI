@@ -1,0 +1,5 @@
+This folder has 1-FMU case with serial tanks in the model and multi-FMU test case that couples multiple 1-FMU test cases. 
+
+build.sh
+
+It compiles the code and runs the executable. By altering arguments (entered after "./build.sh"), we test runtime performance for various scenarios. 

@@ -1,0 +1,4 @@
+loadFile("TankM.mo");
+getErrorString();
+translateModelFMU(SerialTanks,"2.0");
+getErrorString();

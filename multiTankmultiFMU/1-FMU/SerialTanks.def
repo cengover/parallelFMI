@@ -1,0 +1,42 @@
+EXPORTS
+  ;***************************************************
+  ;Common Functions
+  ;****************************************************
+  SerialTanks_fmiGetTypesPlatform @1
+  SerialTanks_fmiGetVersion @2
+  SerialTanks_fmiSetDebugLogging @3
+  SerialTanks_fmiInstantiate @4
+  SerialTanks_fmiFreeInstance @5
+  SerialTanks_fmiSetupExperiment @6
+  SerialTanks_fmiEnterInitializationMode @7
+  SerialTanks_fmiExitInitializationMode @8
+  SerialTanks_fmiTerminate @9
+  SerialTanks_fmiReset @10
+  SerialTanks_fmiGetReal @11
+  SerialTanks_fmiGetInteger @12
+  SerialTanks_fmiGetBoolean @13
+  SerialTanks_fmiGetString @14
+  SerialTanks_fmiSetReal @15
+  SerialTanks_fmiSetInteger @16
+  SerialTanks_fmiSetBoolean @17
+  SerialTanks_fmiSetString @18
+  SerialTanks_fmiGetFMUstate @19
+  SerialTanks_fmiSetFMUstate @20
+  SerialTanks_fmiFreeFMUstate @21
+  SerialTanks_fmiSerializedFMUstateSize @22
+  SerialTanks_fmiSerializeFMUstate @23
+  SerialTanks_fmiDeSerializeFMUstate @24
+  SerialTanks_fmiGetDirectionalDerivative @25
+  ;***************************************************
+  ;Functions for FMI for Model Exchange
+  ;****************************************************
+  SerialTanks_fmiEnterEventMode @26
+  SerialTanks_fmiNewDiscreteStates @27
+  SerialTanks_fmiEnterContinuousTimeMode @28
+  SerialTanks_fmiCompletedIntegratorStep @29
+  SerialTanks_fmiSetTime @30
+  SerialTanks_fmiSetContinuousStates @31
+  SerialTanks_fmiGetDerivatives @32
+  SerialTanks_fmiGetEventIndicators @33
+  SerialTanks_fmiGetContinuousStates @34
+  SerialTanks_fmiGetNominalsOfContinuousStates @35
